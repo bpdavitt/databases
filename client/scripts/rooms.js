@@ -3,7 +3,7 @@ var Rooms = {
 
   _data: new Set,
 
-  selected: 'lobby',
+  selected: 'main',
 
   items: function() {
     return _.chain([...Rooms._data]);
