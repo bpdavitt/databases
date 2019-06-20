@@ -1,6 +1,7 @@
 var Parse = {
 
-  server: `http://parse.${window.CAMPUS}.hackreactor.com/chatterbox/classes/messages`,
+  // server: `http://parse.${window.CAMPUS}.hackreactor.com/chatterbox/classes/messages`,
+  server: 'http://localhost:3000/classes/messages',
 
   create: function(message, successCB, errorCB = null) {
 
@@ -20,7 +21,7 @@ var Parse = {
     $.ajax({
       url: Parse.server,
       type: 'GET',
-      data: { order: '-createdAt' },
+      // data: { order: '-createdAt' },
       contentType: 'application/json',
       success: successCB,
       error: errorCB || function(error) {
