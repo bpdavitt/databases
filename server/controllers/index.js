@@ -1,4 +1,5 @@
 var models = require('../models');
+//THIS IS THE CONTROLLERS FILE
 
 module.exports = {
   messages: {
