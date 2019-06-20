@@ -14,7 +14,6 @@ module.exports = {
       })
     }, // a function which handles a get request for all messages
     post: function (req, res) {
-      console.log(req.body.username, ' from controllers POST');
       models.messages.post(req.body, (err, messageId) => {
         if (err) {
           console.log('Error in post from controllers', err);

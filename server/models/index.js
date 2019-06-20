@@ -15,8 +15,7 @@ module.exports = {
       });
     }, // a function which produces all the messages
     post: function (message, callback) {
-      console.log('the message is: ', typeof message);
-      db.query(`INSERT INTO messages (username, text, roomname) VALUES ('${message.username}', '${message.text}', '${message.roomname}');`, (err, res) => {
+      db.query(`INSERT INTO messages (username, text, roomname) VALUES ("${message.username}", "${message.text}", "${message.roomname}");`, (err, res) => {
         if (err) {
           console.log('Error while posting in models', err);
           callback(err,null);
