@@ -19,48 +19,31 @@ USE chat;
 DROP TABLE IF EXISTS `messages`;
 		
 CREATE TABLE `messages` (
-  `id` INTEGER NOT NULL AUTO_INCREMENT,
-  `user` INTEGER NOT NULL,
-  `text` VARCHAR(120) NOT NULL,
-  `room` VARCHAR(50) NOT NULL DEFAULT 'main',
-  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-);
-
--- ---
--- Table 'users'
--- 
--- ---
-
-DROP TABLE IF EXISTS `users`;
-		
-CREATE TABLE `users` (
-  `id` INTEGER NOT NULL AUTO_INCREMENT,
-  `username` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`id`)
+  `objectId` INTEGER NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(30) NOT NULL DEFAULT 'guest',
+  `text` VARCHAR(120) NOT NULL DEFAULT '',
+  `roomname` VARCHAR(30) NOT NULL DEFAULT 'main',
+  `createdAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`objectId`)
 );
 
 -- ---
 -- Foreign Keys 
 -- ---
 
-ALTER TABLE `messages` ADD FOREIGN KEY (user) REFERENCES `users` (`id`);
 
 -- ---
 -- Table Properties
 -- ---
 
 -- ALTER TABLE `messages` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
--- ALTER TABLE `users` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- ---
 -- Test Data
 -- ---
 
--- INSERT INTO `messages` (`id`,`user`,`text`,`room`,`created_at`) VALUES
+-- INSERT INTO `messages` (`id`,`username`,`text`,`roomname`,`createdAt`) VALUES
 -- ('','','','','');
--- INSERT INTO `users` (`id`,`username`) VALUES
--- ('','');
 /*
 CREATE TABLE messages (
   /* Describe your table here.

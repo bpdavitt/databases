@@ -11,5 +11,8 @@ var connection = mysql.createConnection({
     database : 'chat'
   });
    
-  connection.connect();
+connection.connect((err) => {
+  if (err) throw err
+});
 
+module.exports = connection;
